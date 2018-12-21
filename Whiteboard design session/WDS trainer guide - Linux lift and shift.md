@@ -9,8 +9,9 @@ Linux lift and shift
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
+
 
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -27,30 +28,30 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
-    - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Linux lift and shift whiteboard design session student guide](#linux-lift-and-shift-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 - [Linux lift and shift whiteboard design session trainer guide](#linux-lift-and-shift-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
-    - [Wrap-up](#wrap-up-1)
-    - [Preferred target audience](#preferred-target-audience)
-    - [Preferred solution](#preferred-solution)
-    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#step-3-present-the-solution-1)
+  - [Wrap-up](#wrap-up-1)
+  - [Preferred target audience](#preferred-target-audience)
+  - [Preferred solution](#preferred-solution)
+  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -365,6 +366,8 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Database for MySQL: Use MySQL Workbench to connect and query data | <https://docs.microsoft.com/en-us/azure/mysql/connect-workbench/> |
 | Download MySQL Workbench | <https://dev.mysql.com/downloads/workbench/> |
 | App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
+| Application Gateway | <https://docs.microsoft.com/en-us/azure/application-gateway/> |
+| Azure Monitor | <https://docs.microsoft.com/en-us/azure/azure-monitor/> |
 
 # Linux lift and shift whiteboard design session trainer guide
 
@@ -460,7 +463,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
-        -   Azure's OMS service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Software Update Management tools will be used for any VMs and the Security Tools will also be leveraged during Phase I. Scale Sets are not able to be added to Log Analytics, but the diagnostics from the servers will be sent to a storage account which will load that data. As a result, a custom search for the known error message on the webservers will be written. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
+        -   The Azure Monitor Log Analytics service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Azure Automation Update Management tools will be used for patch management on the VMs and Azure Security Center will also be leveraged to monitor for potential security issues during Phase I. An alert will be configured to monitor for the known error message on the webservers. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
 
     Phase II: Azure PaaS (Web App & MySQL DB)
 
@@ -486,7 +489,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
-        -   Azure's OMS service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, a custom search for the known error message on the webservers will be written. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
+        -   The Azure Monitor service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, an alert for the known error message on the webservers will be configured. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
 
 *Network design*
 
@@ -512,7 +515,8 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         - FGMOITVNET will only allow 3389/TCP from 172.16.0.0/20.
 
-        ![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image8.png "Phase 1 - Networking preferred solution")
+        ![Diagram of the Phase 1 networking that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the OsTickeVNET and the MySQLVNET virtual networks are each peered to the gateway virtual network as well as being peered to each other. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-52-51.png "Phase 1 - Networking preferred solution")
+
 
     Phase II: Network design
 
@@ -520,7 +524,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
 
-        ![Diagram of the Phase 2 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
+        ![Diagram of the Phase 2 that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the Azure Web Apps and MySQL Paas services are connected directly via the ExpressRoute circuit. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-55-39.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 

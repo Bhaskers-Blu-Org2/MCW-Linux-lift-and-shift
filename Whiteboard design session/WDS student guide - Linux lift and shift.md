@@ -9,7 +9,7 @@ Linux lift and shift
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
 
 
@@ -28,20 +28,20 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Linux lift and shift whiteboard design session student guide](#linux-lift-and-shift-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
-#  Linux lift and shift whiteboard design session student guide
+# Linux lift and shift whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
@@ -169,7 +169,7 @@ Directions: With all participants at your table, respond to the following questi
 
     -   Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure.
 
-    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
+    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues
 
 *Network Design*:
 
@@ -179,7 +179,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Customer Objections*:
 
-1.  Provide details on how your will address each of the objections that were put forward by the client.
+1.  Provide details on how your will address each of the objections that were put forward by the client
 
 **Prepare**
 
@@ -240,3 +240,5 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Database for MySQL: Use MySQL Workbench to connect and query data | <https://docs.microsoft.com/en-us/azure/mysql/connect-workbench/> |
 | Download MySQL Workbench | <https://dev.mysql.com/downloads/workbench/> |
 | App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
+| Application Gateway | <https://docs.microsoft.com/en-us/azure/application-gateway/> |
+| Azure Monitor | <https://docs.microsoft.com/en-us/azure/azure-monitor/> |
