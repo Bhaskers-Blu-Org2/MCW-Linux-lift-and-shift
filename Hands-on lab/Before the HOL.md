@@ -10,7 +10,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
 
 
@@ -29,11 +29,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Linux lift and shift before the hands-on lab setup guide](#linux-lift-and-shift-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
-        - [Task 2: Install the MySQL Workbench](#task-2-install-the-mysql-workbench)
-        - [Task 3: Download hands-on lab step-by-step attendee files](#task-3-download-hands-on-lab-step-by-step-attendee-files)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Create a virtual machine to execute the lab](#task-1-create-a-virtual-machine-to-execute-the-lab)
+    - [Task 2: Install the MySQL Workbench](#task-2-install-the-mysql-workbench)
+    - [Task 3: Download hands-on lab step-by-step attendee files](#task-3-download-hands-on-lab-step-by-step-attendee-files)
 
 <!-- /TOC -->
 
@@ -51,99 +51,93 @@ Duration: 30 Minutes
 
 1.  Launch a browser and navigate to <https://portal.azure.com>. Once prompted, login with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or just a Microsoft Account.
 
-2.  Click on **+NEW**, and in the search box type in **Visual Studio Community 2017 on Windows Server 2016 (x64)** and press enter. Click the Visual Studio Community 2017 image running on Windows Server 2016 and with the latest update.
+2.  Click on **+Create a resource**, and in the search box type in **Visual Studio Community 2017** and press enter. Click the Visual Studio Community 2017 image running on Windows Server 2016 and with the latest update.
 
-3.  In the returned search results, click the image name.
+    ![The create a resource button is selected and marked 1, In the Everything blade, the search field displays Visual Studio Community 2017 on Windows Server 2016 (x64) and is marked 2. Under Results, Visual Studio Community 2017 (latest release) on Windows Server 2016 (x64) is selected and marked 3.](images/Setup/2018-12-21-17-04-11.png "Everything blade")
 
-    ![In the Everything blade, the search field displays Visual Studio Community 2017 on Windows Server 2016 (x64). Under Results, Visual Studio Community 2017 on Windows Server 2016 (x64) is selected.](images/Setup/image4.png "Everything blade")
+3.  In the Marketplace solution blade, at the bottom of the page keep the deployment model set to **Resource Manager**, and click **Create**.
 
-4.  In the Marketplace solution blade, at the bottom of the page keep the deployment model set to **Resource Manager**, and click **Create**.
+    ![Screenshot of the Resource Manager deployment model chosen and the create button.](images/Setup/2018-12-21-17-06-40.png "Select the deployment model")
 
-    ![Resource Manager displays in the Select a deployment model field.](images/Setup/image5.png "Select a deployment model field")
-
-5.  Set the following configuration on the Basics tab and click **OK**:
-
-    -   Name: **LABVM**
-
-    -   VM disk type: **SSD**
-
-    -   User name: **demouser**
-
-    -   Password: **demo\@pass123**
+4.  Set the following configuration on the Basics tab and click **Next: Disks >**:
 
     -   Subscription: **If you have multiple subscriptions choose the subscription to execute your labs in.**
 
     -   Resource Group: **OPSLABRG**
 
-    -   Location: **Choose the closest Azure region to you**.
+    -   Virtual machine name: **LABVM**
 
-    ![Fields in the Basics blade display with the previously defined settings.](images/Setup/image6.png "Basics blade")
+    -   Region: **Choose the closest Azure region to you**
 
-6.  Choose the **DS1\_V2 Standard** or **DS2\_V2** instance size on the Size blade.
+    -   Availability options: **No infrastructure redundancy required**
 
-    > **Note**: You may have to click the **View All** link to see the instance sizes.
+    -   Image: **Visual Studio Community 2017 (latest release) on Windows Server 2016 (x64)**
 
-    ![In the Choose a size blade, the DS1\_V2 Standard option is selected.](images/Setup/image7.png "Choose a size blade")
+    -   Size: **Standard D2S v3**
 
-    > **Note**: If the Azure Subscription you are using is [NOT]{.underline} a trial Azure subscription you may want to chose the DS2\_V2 to have more power in this LABMV. If you are using a trial subscription or one that you know has a restriction on the number of cores stick with the DS1\_V2.
+    -   Username: **demouser**
 
-7.  Click **Configure required settings** to specify a storage account for your virtual machine if a storage account name is not automatically selected for you.
+    -   Password: **demo\@pass123**
 
-    ![In the Settings blade, the Storage account option is selected.](images/Setup/image8.png "Settings blade")
+    -   Publich inbound ports: **Allow selected ports**
 
-8.  Click **Create New**.
+    -   Select inbound ports: **RDP**
 
-    ![Screenshot of the Create new button.](images/Setup/image9.png "Create new button")
+    -   Already have a Windows License?: **No**
 
-9.  Specify a unique name for the storage account (all lower letters and alphanumeric characters) and ensure the green checkmark shows the name is valid.
+    ![The basics tab is selected, all of the configuration options have been set and the Next Disks button is selected.](images/Setup/2018-12-21-17-16-55.png "Create a virtual machine - Basics tab")
 
-    ![Next to the Name field, the Green checkmark icon is selected.](images/Setup/image10.png "Green checkmark icon")
+5.  Verify the following configurations on the Disks tab and then click **Next: Netoworking >**.
 
-10. Click **OK** to continue.
+    -   OS disk type: **Premium SSD**
 
-    ![Screenshot of the OK button.](images/Setup/image11.png "OK button")
+    ![The disks tab is selected, the Premium SSD option is configured and the Next Networking button is selected.](images/Setup/2018-12-21-17-19-09.png "Create a virtual machine - Disks tab")
 
-11. Click **Configure required settings** for the Diagnostics storage account if a storage account name is not automatically selected for you. Repeat the previous steps to select a unique storage account name. This storage account will hold diagnostic logs about your virtual machine that you can use for troubleshooting purposes.
+6.  Accept the defaults on the Networking tab and then click **Next: Management**.
 
-    ![Screenshot of the Diagnostics Storage Account option.](images/Setup/image12.png "Diagnostics Storage Account option")
+    ![The networking tab is selected, the default options are selected and the Next Management button is selected.](images/Setup/2018-12-21-17-23-33.png "Create a virtual machine - Networking tab")
 
-12. Accept the remaining default values on the Settings blade and click **OK**. On the Summary page click **OK**. The deployment should begin provisioning. It may take 10+ minutes for the virtual machine to complete provisioning.
+7.  On the Management tab, turn off **Boot diagnostics** and **Enable auto-shutdown** and then click **Review + Create**.
 
-    ![Screenshot of the Deploying Visual Studio icon.](images/Setup/image13.png "Deploying Visual Studio icon")
+    ![The management tab is selected, the Boot Diagnostics and enable auto-shutdown settings have been changed to off and the Review and create button is selected.](images/Setup/2018-12-21-17-25-57.png "Create a virtual machine - Networking tab")
 
->**Note**: Please wait for the LABVM to be provisioned prior to moving to the next step.
+8.  After the validation has passed, click the **Create** button to deploy the virtual machine. The deployment should begin provisioning. It may take 10+ minutes for the virtual machine to complete provisioning.
 
-13. Move back to the Portal page on your local machine and wait for **LABVM** to show the Status of **Running**. Click **Connect** to establish a new Remote Desktop Session.
+    ![The review and create tab is selected, the validation passed message is highlighted and the create button is selected.](images/Setup/2018-12-21-17-30-18.png "Create a virtual machine - Review and create tab")
 
-    ![The Connect button is selected on the Portal page top menu.](images/Setup/image14.png "Portal page top menu")
+    >**Note**: Please wait for the LABVM to be provisioned prior to moving to the next step.
 
-14. Depending on your remote desktop protocol client and browser configuration you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect.
+9.  After the deployment completes, navigate to your **LABVM** and click **Connect** to establish a new Remote Desktop Session.
 
-15. Log in with the credentials specified during creation:
+    ![The labvm overview blade is shown with the connect button highlighted.](images/Setup/2018-12-21-17-44-00.png "LABVM connect button")
+
+10. Depending on your remote desktop protocol client and browser configuration you will either be prompted to open an RDP file, or you will need to download it and then open it separately to connect.
+
+11. Log in with the credentials specified during creation:
 
     -   User: **demouser**
 
     -   Password: **demo\@pass123**
 
-16. You will be presented with a Remote Desktop Connection warning because of a certificate trust issue. Click **Yes** to continue with the connection.
+12. You will be presented with a Remote Desktop Connection warning because of a certificate trust issue. Click **Yes** to continue with the connection.
 
-    ![The Remote Desktop Connection dialog box displays.](images/Setup/image15.png "Remote Desktop Connection dialog box")
+    ![The Remote Desktop Connection dialog box displays.](images/Setup/image14.png "Remote Desktop Connection dialog box")
 
-17. When logging on for the first time you will see a prompt on the right asking about network discovery. Click **No**.
+13. When logging on for the first time you will see a prompt on the right asking about network discovery. Click **No**.
 
-    ![A Network Diagnostics prompt displays, asking if you want to find PCs, devices, and content on this network and automatically connect.](images/Setup/image16.png "Network Diagnostics prompt")
+    ![A Network Diagnostics prompt displays, asking if you want to find PCs, devices, and content on this network and automatically connect.](images/Setup/image15.png "Network Diagnostics prompt")
 
-18. Notice that Server Manager opens by default. On the left, click **Local Server**.
+14. Notice that Server Manager opens by default. On the left, click **Local Server**.
 
-    ![On the Server Manager menu, Local Server is selected.](images/Setup/image17.png "Server Manager menu")
+    ![On the Server Manager menu, Local Server is selected.](images/Setup/image16.png "Server Manager menu")
 
-19. On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
+15. On the right side of the pane, click **On** by **IE Enhanced Security Configuration**.
 
-    ![In the Essentials section, IE Enhanced Security Configuration is selected, and set to On.](images/Setup/image18.png "Essentials section")
+    ![In the Essentials section, IE Enhanced Security Configuration is selected, and set to On.](images/Setup/image17.png "Essentials section")
 
-20. Change to **Off** for Administrators and click **OK**.
+16. Change to **Off** for Administrators and click **OK**.
 
-    ![In the Internet Explorer Enhanced Security Configuration dialog box, Administrators is set to Off.](images/Setup/image19.png "Internet Explorer Enhanced Security Configuration dialog box")
+    ![In the Internet Explorer Enhanced Security Configuration dialog box, Administrators is set to Off.](images/Setup/image18.png "Internet Explorer Enhanced Security Configuration dialog box")
 
 ### Task 2: Install the MySQL Workbench
 
