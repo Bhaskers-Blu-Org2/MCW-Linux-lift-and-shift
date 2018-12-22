@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
 
 
@@ -781,49 +781,46 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![Under Deployment, Deployment center is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-21-20-37-01.png "Deployment section")
 
-14. Select **GitHub**, and then click the **Authorize** button if necessary.
+14. Select **GitHub**, and then click the **Authorize** button and follow the prompts to connect your Github account with your Azure subscription.
 
-    ![Screenshot of the deployment center with the GitHub deployment option and and authorization button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-21-20-40-23.png)
+    ![Screenshot of the deployment center with the GitHub deployment option selected and authorization button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-21-20-40-23.png "Deployment center - Source control authorization")
 
-15. Click **Authorization**. If you have not connected your GitHub account to the Azure portal, follow the prompts.
+15. Once authorized, select **Github** and choose **Continue**.
 
-16. Click **Choose your organization** if your GitHub personal account is not shown.
+    ![Screenshot of the deployment center source control step with the GitHub deployment option selected and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-08-57-46.png "Deployment center - Source control")
 
-17. After your authorization settings are configured, click **Choose project**.
+16. On the build provider step, choose **App Service Kudu build server** and select **Continue**.
 
-    ![Screenshot of the Choose Project, Configure required settings option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image112.png "Choose project option")
+    ![Screenshot of the deployment center build provider step with the App Service Kudu build server option selected and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-01-49.png "Deployment center - Build provider")
 
-18. Select the **osticket** repo.
+17. On the configure step, choose your organization or Github account, then select the **osticket** repository and the **master** branch.
 
-    ![On the Choose project blade, osticket is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image113.png "Choose project blade")
+    ![Screenshot of the deployment center configure step with the organization option configured, the repository set to osticket, the branch set to master and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-07-09.png "Deployment center - configure")
 
-19. Review your selections in the **Deployment Option** blade and then click **OK**.
+18. The OsTicket application will be downloaded from the GitHub account. First, it will show as Pending and then Active. You may need to refresh the view to see it.
 
-    ![The Deployment option blade displays, ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image114.png "Deployment option blade")
+    ![Screenshot of the deployment status showing pending.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-21-48.png "Deployment status pending")
 
-20. The OsTicket application will be downloaded from the GitHub account. First, it will show as Pending and then Active. It may take a minute for it to appear in Deployment Options.
+    ![Screenshot of the deployment status showing success.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-23-24.png "Deployment status success")
 
-    ![In the App Service blade, the Fetch status is downloading.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image115.png "App Service blade")
 
-    ![In the App Service blade, a message displays saying that the MySQL Server Settings are now updated.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image116.png "App Service blade")
-
-21. Click back to the **Overview** page, and then click the **URL** for the Web App.
+19. Navigate back to the **Overview** page of your Web App, and then select the **URL** for the Web App.
 
     ![The Web App URL http://osticketsystem.azurewebsites.net displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image117.png "Web App URL")
 
-22. Immediately, the Web App will load. You should see the Support Center website again.
+24. Immediately, the Web App will load. You should see the Support Center website again.
 
     ![The Support Center website displays with two button options: Open a New Ticket, or Check Ticket Status.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image22.png "Support Center webpage")
 
-23. Click the **Sign in** link.
+25. Click the **Sign in** link.
 
     ![Screenshot of the Sign in link.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image23.png "Sign in link")
 
-24. Locate **I'm an agent** and click the **sign in here** link.
+26. Locate **I'm an agent** and click the **sign in here** link.
 
     ![On the Sign in to Microsoft Cloud Workshop page, next to I\'m an agent, the link to sign in here is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image24.png "Sign in page")
 
-25. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
+27. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
 
     a.  Username: ***demouser***
 
@@ -831,11 +828,11 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
-26. Once logged into the OsTicket system, click **My Tickets**.
+28. Once logged into the OsTicket system, click **My Tickets**.
 
     ![On the osTicket page, tickets tab, My Tickets (4) is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image26.png "osTicket page, tickets tab")
 
-27. On the **My Tickets** screen, click through to one of the tickets. Once again, you see that the data from the IaaS installation of the OsTicket system is preserved which means that you have successfully lifted and shifted the application to Azure PaaS!
+29. On the **My Tickets** screen, click through to one of the tickets. Once again, you see that the data from the IaaS installation of the OsTicket system is preserved which means that you have successfully lifted and shifted the application to Azure PaaS!
 
 ## After the hands-on lab
 
