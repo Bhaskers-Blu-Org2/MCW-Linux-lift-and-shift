@@ -79,7 +79,7 @@ Duration: 30 Minutes
 
     -   Password: **demo\@pass123**
 
-    -   Publich inbound ports: **Allow selected ports**
+    -   Public inbound ports: **Allow selected ports**
 
     -   Select inbound ports: **RDP**
 
@@ -87,7 +87,7 @@ Duration: 30 Minutes
 
     ![The basics tab is selected, all of the configuration options have been set and the Next Disks button is selected.](images/Setup/2018-12-21-17-16-55.png "Create a virtual machine - Basics tab")
 
-5.  Verify the following configurations on the Disks tab and then click **Next: Netoworking >**.
+5.  Verify the following configurations on the Disks tab and then click **Next: Networking >**.
 
     -   OS disk type: **Premium SSD**
 

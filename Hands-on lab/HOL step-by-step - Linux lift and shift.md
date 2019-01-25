@@ -535,7 +535,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![On the Administration - Data Export page, on the Object selection tab, under Tables to Export, osticket is selected. Under Export options, Export to Self-Contained File is selected, and the file location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image76.png "Administration - Data Export page")
 
-5.  You will get a version mismatch warning. Cick **Continue Anyway**.
+5.  You will get a version mismatch warning. Select **Continue Anyway**.
 
     ![A MySQL Workbench warning popup displays letting you know there is a version mismatch. The continue anyway button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image43.png "MySQL Workbench warning popup")
 
@@ -547,7 +547,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
 Duration: 60 Minutes
 
-In this exercise, you will implement Phase II of the migration to Azure. Here you will retire the Azure IaaS implementation and move to Azure App Service and Azure Database for MySQL. The first steps will be to build the MySQL DB and again migrate the data using MySQL Workbench. Then, you will create the Azure Web App and connect it to GitHub Repo to download the app using a Docker Container with PHP 7.0.
+In this exercise, you will implement Phase II of the migration to Azure. Here you will retire the Azure IaaS implementation and move to Azure App Service and Azure Database for MySQL. The first steps will be to build the MySQL DB and again migrate the data using MySQL Workbench. Then, you will create the Azure Web App and connect it to GitHub repository to download the app using a Docker Container with PHP 7.0.
 
 ![The Phase II diagram has /OsTicket with an arrow pointing to a Resource Group containing Linux, Docker, osTicket, a web client, and MySQL.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image4.png "Phase II diagram")
 
