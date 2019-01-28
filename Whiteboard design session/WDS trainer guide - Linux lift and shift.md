@@ -213,7 +213,7 @@ After completing a cloud readiness assessment of the application for Fabrikam, A
 
 -   Linux Ubuntu 16.04, Apache 2, MySQL 5.6 (100GB DB), and PHP 7.0 are the current versions.
 
--   The VM is hosted on a VMWare infrastructure using 8vCPUs and 16GB of RAM. When asked about why the applications required 8vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
+-   The VM is hosted on a VMWare infrastructure using 8 vCPUs and 16GB of RAM. When asked about why the applications required 8 vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
 
 -   The FGMO team stated there has been downtime due to the web server not responding. When this happens, they are forced to reboot the VM (every few weeks). They have noticed error OST98744 in event log when this happens.
 
@@ -259,7 +259,7 @@ ExpressRoute with VPN Failover
 
 Azure App Service
 
-![The Azure App Service diagram begins wtih the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
+![The Azure App Service diagram begins with the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
 
 ## Step 2: Design a proof of concept solution
 
@@ -463,13 +463,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
-        -   The Azure Monitor Log Analytics service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Azure Automation Update Management tools will be used for patch management on the VMs and Azure Security Center will also be leveraged to monitor for potential security issues during Phase I. An alert will be configured to monitor for the known error message on the webservers. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
+        -   The Azure Monitor Log Analytics service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Azure Automation Update Management tools will be used for patch management on the VMs and Azure Security Center will also be leveraged to monitor for potential security issues during Phase I. An alert will be configured to monitor for the known error message on the web servers. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
 
     Phase II: Azure PaaS (Web App & MySQL DB)
 
     -   How will the application be deployed on the compute platform?
 
-        -   Once the application has been moved to Azure Web Apps it will be configured for continuous delivery using GitHub. This means that once code has been committed to the master branch of the repo in GitHub it will immediately deploy to the site.
+        -   Once the application has been moved to Azure Web Apps it will be configured for continuous delivery using GitHub. This means that once code has been committed to the master branch of the repository in GitHub it will immediately deploy to the site.
 
     -   How will the database be migrated to Azure?
 
@@ -489,7 +489,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
-        -   The Azure Monitor service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, an alert for the known error message on the webservers will be configured. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
+        -   The Azure Monitor service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, an alert for the known error message on the web servers will be configured. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
 
 *Network design*
 
@@ -524,7 +524,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
 
-        ![Diagram of the Phase 2 that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the Azure Web Apps and MySQL Paas services are connected directly via the ExpressRoute circuit. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-55-39.png "Phase 2 - Networking preferred solution")
+        ![Diagram of the Phase 2 that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the Azure Web Apps and MySQL PaaS services are connected directly via the ExpressRoute circuit. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-55-39.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 

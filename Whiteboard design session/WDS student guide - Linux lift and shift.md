@@ -87,7 +87,7 @@ After completing a cloud readiness assessment of the application for Fabrikam, A
 
 -   Linux Ubuntu 16.04, Apache 2, MySQL 5.6 (100GB DB), and PHP 7.0 are the current versions.
 
--   The VM is hosted on a VMWare infrastructure using 8vCPUs and 16GB of RAM. When asked about why the applications required 8vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
+-   The VM is hosted on a VMWare infrastructure using 8 vCPUs and 16GB of RAM. When asked about why the applications required 8 vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
 
 -   The FGMO team stated there has been downtime due to the web server not responding. When this happens, they are forced to reboot the VM (every few weeks). They have noticed error OST98744 in event log when this happens.
 
@@ -133,7 +133,7 @@ ExpressRoute with VPN Failover
 
 Azure App Service
 
-![The Azure App Service diagram begins wtih the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
+![The Azure App Service diagram begins with the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
 
 ## Step 2: Design a proof of concept solution
 

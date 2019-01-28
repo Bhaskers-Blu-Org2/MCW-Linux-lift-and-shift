@@ -68,7 +68,7 @@ To avoid any impact from restructured support operations, executives decided to 
 
 **Phase I will result in an environment resembling this diagram:**
 
-![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
+![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, Bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
 
 **Phase II will result in an environment resembling this diagram:**
 
@@ -254,7 +254,7 @@ Duration: 90 Minutes
 
 In this exercise, you will deploy the OsTicket application to Azure IaaS. In the first task, you will deploy and configure a MySQL Cluster with multiple nodes. Next, you will restore the database that was exported using MySQL Workbench. After the data tier of your application has been configured you will deploy a Virtual Machine Scale Set. The OsTicket application will be installed on the instances using the Custom Linux Extension and will be self-configuring. The Scale Set will be setup to autoscale and the VMs that spin up will also self-configuring.
 
-![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
+![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, Bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
 
 ### Task 1: Deploy the MySQL HA cluster
 
@@ -657,7 +657,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![Under Management, Data Import/Restore is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image55.png "Management section")
 
-10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** datafile.
+10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** data file.
 
     ![On the Data Import page, on the Import from Disk tab, under Import options, Import from Self-Contained File is selected, and the location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image89.png "Data Import page")
 
@@ -739,7 +739,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![Under Connection strings, the osticket connection string displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image99.png "Connection strings section")
 
-5.  Open a new browser tab and connect to <https://github.com/opsgility/osTicket>. This is a public repo for the OsTicket software. Sign in to your personal GitHub account or create a new one.
+5.  Open a new browser tab and connect to <https://github.com/opsgility/osTicket>. This is a public repository for the OsTicket software. Sign in to your personal GitHub account or create a new one.
 
     ![On the GitHub webpage, a code tab displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image100.png "GitHub webpage")
 
