@@ -9,8 +9,9 @@ Linux lift and shift
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
+
 
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -27,30 +28,30 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
-    - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Linux lift and shift whiteboard design session student guide](#linux-lift-and-shift-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 - [Linux lift and shift whiteboard design session trainer guide](#linux-lift-and-shift-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
-    - [Wrap-up](#wrap-up-1)
-    - [Preferred target audience](#preferred-target-audience)
-    - [Preferred solution](#preferred-solution)
-    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#step-3-present-the-solution-1)
+  - [Wrap-up](#wrap-up-1)
+  - [Preferred target audience](#preferred-target-audience)
+  - [Preferred solution](#preferred-solution)
+  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -212,7 +213,7 @@ After completing a cloud readiness assessment of the application for Fabrikam, A
 
 -   Linux Ubuntu 16.04, Apache 2, MySQL 5.6 (100GB DB), and PHP 7.0 are the current versions.
 
--   The VM is hosted on a VMWare infrastructure using 8vCPUs and 16GB of RAM. When asked about why the applications required 8vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
+-   The VM is hosted on a VMWare infrastructure using 8 vCPUs and 16GB of RAM. When asked about why the applications required 8 vCPUs, the FGMO team stated that during busy periods the server can get overloaded. They decided to scale up the VM to handle the load when needed.
 
 -   The FGMO team stated there has been downtime due to the web server not responding. When this happens, they are forced to reboot the VM (every few weeks). They have noticed error OST98744 in event log when this happens.
 
@@ -258,7 +259,7 @@ ExpressRoute with VPN Failover
 
 Azure App Service
 
-![The Azure App Service diagram begins wtih the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
+![The Azure App Service diagram begins with the internet, which points to both Azure Active Directory and App Service app, using Authentication. A Resource group encompasses an App Service Plan and an Azure SQL Database. The App Service Plan is made up of multiple App Service apps, and the Azure SQL Database encompasses A logical SQL server, and two SQL databases.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image5.png "Azure App Service diagram")
 
 ## Step 2: Design a proof of concept solution
 
@@ -365,6 +366,8 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Database for MySQL: Use MySQL Workbench to connect and query data | <https://docs.microsoft.com/en-us/azure/mysql/connect-workbench/> |
 | Download MySQL Workbench | <https://dev.mysql.com/downloads/workbench/> |
 | App Service for Linux | <https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro/> |
+| Application Gateway | <https://docs.microsoft.com/en-us/azure/application-gateway/> |
+| Azure Monitor | <https://docs.microsoft.com/en-us/azure/azure-monitor/> |
 
 # Linux lift and shift whiteboard design session trainer guide
 
@@ -442,15 +445,17 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         -   The application will be deployed to the VM Scale Set using the Linux Custom Script extension via download zip file of the application. Any upgrades will need to be built and staged in updated zip file for new VMs to capture. This is compatible with Scale Sets and will be self-configuring for new VMs as it scales up and down.
 
+
     -   How will the database be migrated to Azure?
 
         -   The MySQL Database will be manually backed up and restored using MySQL workbench. This is a onetime process and there will be downtime associated with this procedure. There will be zero data loss.
+
 
     -   How will the App and Data tiers be split and secured?
 
         -   The database cluster and the VM Scale Set will be deployed into two separate virtual networks and connected via a peering. Network security groups will be used to ensure connectivity for only the specific ports and protocols that we be used.
 
-        -   The KeyVault will be used to create and house the keys, certificates and secrets for the application. This will be used to encrypt the VMs for the database ensuring that the clients data cannot be stolen.
+        -   The KeyVault will be used to create and house the keys, certificates and secrets for the application. This will be used to encrypt the VMs for the database ensuring that the client's data cannot be stolen.
 
     -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
 
@@ -460,33 +465,38 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
-        -   Azure's OMS service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Software Update Management tools will be used for any VMs and the Security Tools will also be leveraged during Phase I. Scale Sets are not able to be added to Log Analytics, but the diagnostics from the servers will be sent to a storage account which will load that data. As a result, a custom search for the known error message on the webservers will be written. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
+        -   The Azure Monitor Log Analytics service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. From here different solutions will be used as required to provide for support and monitoring. The Azure Automation Update Management tools will be used for patch management on the VMs and Azure Security Center will also be leveraged to monitor for potential security issues during Phase I. An alert will be configured to monitor for the known error message on the web servers. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to start the impacted machine.
 
     Phase II: Azure PaaS (Web App & MySQL DB)
 
     -   How will the application be deployed on the compute platform?
 
-        -   Once the application has been moved to Azure Web Apps it will be configured for continuous delivery using GitHub. This means that once code has been committed to the master branch of the repo in GitHub it will immediately deploy to the site.
+        -   Once the application has been moved to Azure Web Apps it will be configured for continuous delivery using GitHub. This means that once code has been committed to the master branch of the repository in GitHub it will immediately deploy to the site.
 
     -   How will the database be migrated to Azure?
+    
 
         -   The MySQL Database will again be manually backed up and restored using MySQL workbench. This is a onetime process and there will be downtime associated with this procedure. There will be zero data loss.
 
     -   How will the App and Data tiers be split and secured?
+    
 
         -   The App and Data tiers of the application are not running in Azure PaaS. As a result, they no longer rely upon the use of a Virtual Network. Each is secured by the Azure platform. The database will be configured to use SSL encryption between the two, but there is no longer a tiering configure that must be secured.
 
     -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
+    
 
         -   Given that the application is now fully deployed into Azure PaaS, high-availability is built into each tier with zero configuration on the part of the DevOps team. The Web App system will scale up and down base down based on the load. If for some reason the MySQL Database becomes a bottle neck it can be easily resized using the Azure portal. There will be a period of downtime for this scaling, so it will be important to do performance testing prior to periods of load on the system.
 
     -   Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure.
+    
 
         -   The Active Directory that is running on-premises today will be synchronized with Azure AD using AD Connect. This will allow for the use of RBAC on the various resource groups that will be deployed into Azure.
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
+    
 
-        -   Azure's OMS service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, a custom search for the known error message on the webservers will be written. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
+        -   The Azure Monitor service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, an alert for the known error message on the web servers will be configured. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
 
 *Network design*
 
@@ -512,7 +522,8 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         - FGMOITVNET will only allow 3389/TCP from 172.16.0.0/20.
 
-        ![Diagram of the Phase 1 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image8.png "Phase 1 - Networking preferred solution")
+        ![Diagram of the Phase 1 networking that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the OsTickeVNET and the MySQLVNET virtual networks are each peered to the gateway virtual network as well as being peered to each other. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-52-51.png "Phase 1 - Networking preferred solution")
+
 
     Phase II: Network design
 
@@ -520,7 +531,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     -   The OsTicketVNET and MySQLVNET will be retired after the migration to PaaS.
 
-        ![Diagram of the Phase 2 that depicts the preferred solution.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/image9.png "Phase 2 - Networking preferred solution")
+        ![Diagram of the Phase 2 that depicts the preferred solution. The Tokyo datacenter is connected to the gateway virtual network in Azure via ExpressRoute. In Azure, the Azure Web Apps and MySQL PaaS services are connected directly via the ExpressRoute circuit. Azure resources are deployed to the Japan East region.](images/Whiteboarddesignsessiontrainerguide-Linuxliftandshiftimages/media/2018-12-21-15-55-39.png "Phase 2 - Networking preferred solution")
 
 ## Checklist of preferred objection handling
 

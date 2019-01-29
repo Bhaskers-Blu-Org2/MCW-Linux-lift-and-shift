@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
 
 
@@ -31,19 +31,19 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 - [Requirements](#requirements)
 - [Help references](#help-references)
 - [Exercise 1: Deploy the on-premises OsTicket VM application](#exercise-1-deploy-the-on-premises-osticket-vm-application)
-    - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
-    - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
+  - [Task 1: Deploy the OnPremVM](#task-1-deploy-the-onpremvm)
+  - [Task 2: Export the osticket database](#task-2-export-the-osticket-database)
 - [Exercise 2: Migrate to Azure IaaS VM Scale Sets and MySQL cluster](#exercise-2-migrate-to-azure-iaas-vm-scale-sets-and-mysql-cluster)
-    - [Task 1: Deploy the MySQL HA cluster](#task-1-deploy-the-mysql-ha-cluster)
-    - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
-    - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
-    - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
-    - [Task 5: Export the osticket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
+  - [Task 1: Deploy the MySQL HA cluster](#task-1-deploy-the-mysql-ha-cluster)
+  - [Task 2: Connect to the MySQL cluster and restore the database](#task-2-connect-to-the-mysql-cluster-and-restore-the-database)
+  - [Task 3: Deploy the Virtual Machine Scale Set for the OsTicket Application](#task-3-deploy-the-virtual-machine-scale-set-for-the-osticket-application)
+  - [Task 4: Connect the MySQLVNet to the Scale Sets VNet](#task-4-connect-the-mysqlvnet-to-the-scale-sets-vnet)
+  - [Task 5: Export the osticket database from the MySQL cluster](#task-5-export-the-osticket-database-from-the-mysql-cluster)
 - [Exercise 3: Migrate the OsTicket application from Azure IaaS to PaaS](#exercise-3-migrate-the-osticket-application-from-azure-iaas-to-paas)
-    - [Task 1: Create the MySQL database](#task-1-create-the-mysql-database)
-    - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
-    - [Task 3: Create the Web App](#task-3-create-the-web-app)
-    - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
+  - [Task 1: Create the MySQL database](#task-1-create-the-mysql-database)
+  - [Task 2: Restore the osticket database to MySQL PaaS](#task-2-restore-the-osticket-database-to-mysql-paas)
+  - [Task 3: Create the Web App](#task-3-create-the-web-app)
+  - [Task 4: Configure the OsTicket Web App](#task-4-configure-the-osticket-web-app)
 - [After the hands-on lab](#after-the-hands-on-lab)
 
 <!-- /TOC -->
@@ -68,7 +68,7 @@ To avoid any impact from restructured support operations, executives decided to 
 
 **Phase I will result in an environment resembling this diagram:**
 
-![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
+![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, Bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
 
 **Phase II will result in an environment resembling this diagram:**
 
@@ -111,14 +111,14 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     > **Note:** You can also specify an alternate region.
 
-    ```bash
-        az group create --name OsTicketOnPremRG --location "East US"
+    ```
+    az group create --name OsTicketOnPremRG --location "East US"
     ```
 
 3.  Execute the following command to deploy the ARM template:
 
-    ```bash
-        az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
+    ```
+    az group deployment create --name OsTicketOnPremRG --resource-group OsTicketOnPremRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/onpremvmdeploy.json" 
     ```
 4.  This deployment will take about 5 minutes to complete. Wait until it has been deployed before moving on to the next step.
 
@@ -184,7 +184,7 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
     -   Connection Method: **Standard TCP/IP over SSH**
 
-    -   SSH Hostname: **\<enter the Public ip address\>**
+    -   SSH Hostname: **\<enter the Public ip address\>:22**
 
     -   SSH Username: **demouser**
 
@@ -232,9 +232,9 @@ In this exercise, you will deploy a VM using an ARM template that will act as th
 
 14. In the **Navigator** pane to the left, click **Data Export**.
 
-> **Note:** You may have to toggle tabs in the pane to **Management**. 
+    > **Note**: You may have to toggle tabs in the pane to **Management**. 
 
-   ![Under Management, Data Export is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image41.png "Management section")
+    ![Under Management, Data Export is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image41.png "Management section")
 
 15. On the **Data Export** screen, select the **osticket** schema. Then, select **Export to Self-Contained File**, and name the file **c:\\HOL\\onpremvm.sql** and click **Start Export**.
 
@@ -254,7 +254,7 @@ Duration: 90 Minutes
 
 In this exercise, you will deploy the OsTicket application to Azure IaaS. In the first task, you will deploy and configure a MySQL Cluster with multiple nodes. Next, you will restore the database that was exported using MySQL Workbench. After the data tier of your application has been configured you will deploy a Virtual Machine Scale Set. The OsTicket application will be installed on the instances using the Custom Linux Extension and will be self-configuring. The Scale Set will be setup to autoscale and the VMs that spin up will also self-configuring.
 
-![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
+![The Phase I diagram has two Resource Groups, which are connected by VNet Peering. The first Resource Group is MySQLVNet, and has MySQL, Bitnami, and Linux. The second Resource Group is OsticketVNet, and has Linux, Apache, PHP, and Osticket. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image3.png "Phase I diagram")
 
 ### Task 1: Deploy the MySQL HA cluster
 
@@ -266,17 +266,17 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     > **Note:** Ensure you that use the same region as the OsTicket application.
 
-    ```bash
-        az group create --name OsTicketMySQLVMRG --location "East US"
+    ```
+    az group create --name OsTicketMySQLVMRG --location "East US"
     ```
 
 3.  Execute the following command to deploy the ARM template:
 
-    ```bash
-        az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
+    ```
+    az group deployment create --name OsTicketMySQLVMRG --resource-group OsTicketMySQLVMRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/mysqlhadeploy.json" 
     ```
 
-    > **Note:** The settings that are being deployed as part of the template will be referenced later in the lab.
+    > **Note**: The settings that are being deployed as part of the template will be referenced later in the lab.
 
     -   OS User Name: **bitnami**
 
@@ -402,14 +402,14 @@ In this exercise, you will deploy the OsTicket application to Azure IaaS. In the
 
     > **Note:** Ensure you that use the same region as the OsTicket application.
 
-    ```bash
-        az group create --name OsTicketVMSSRG --location "East US"
+    ```
+    az group create --name OsTicketVMSSRG --location "East US"
     ```
 
 3.  Execute the following command to deploy the ARM template. This command requires a parameter to be passed to the template. In the example, **osticketXX** is used. Replace that value with a unique value that is lowercase and less than 10 characters. Just replace the value of XX into any number which is unique. It will take up to 10 minutes to run and complete the command. 
 
-    ```bash
-        az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
+    ```
+    az group deployment create --name OsTicketVMSSRG --resource-group OsTicketVMSSRG --template-uri "https://cloudworkshop.blob.core.windows.net/linux-lift-shift/scalesetdeploy.json" --parameters vmssName=osticketXX
     ```
     Take note of the credentials for the VMSS:
 
@@ -503,9 +503,9 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
 12. At the OsTicket screen enter the **username** and **password**, and click **Log In**.
 
-    a.  Username: ***demouser***
+    a.  Username: **demouser**
 
-    b.  Password: ***demo@pass123***
+    b.  Password: **demo@pass123**
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
@@ -535,7 +535,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
     ![On the Administration - Data Export page, on the Object selection tab, under Tables to Export, osticket is selected. Under Export options, Export to Self-Contained File is selected, and the file location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image76.png "Administration - Data Export page")
 
-5.  You will get a version mismatch warning. Cick **Continue Anyway**.
+5.  You will get a version mismatch warning. Select **Continue Anyway**.
 
     ![A MySQL Workbench warning popup displays letting you know there is a version mismatch. The continue anyway button is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image43.png "MySQL Workbench warning popup")
 
@@ -547,7 +547,7 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
 Duration: 60 Minutes
 
-In this exercise, you will implement Phase II of the migration to Azure. Here you will retire the Azure IaaS implementation and move to Azure App Service and Azure Database for MySQL. The first steps will be to build the MySQL DB and again migrate the data using MySQL Workbench. Then, you will create the Azure Web App and connect it to GitHub Repo to download the app using a Docker Container with PHP 7.0.
+In this exercise, you will implement Phase II of the migration to Azure. Here you will retire the Azure IaaS implementation and move to Azure App Service and Azure Database for MySQL. The first steps will be to build the MySQL DB and again migrate the data using MySQL Workbench. Then, you will create the Azure Web App and connect it to GitHub repository to download the app using a Docker Container with PHP 7.0.
 
 ![The Phase II diagram has /OsTicket with an arrow pointing to a Resource Group containing Linux, Docker, osTicket, a web client, and MySQL.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image4.png "Phase II diagram")
 
@@ -559,16 +559,16 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 2.  Execute the following command to create a resource group to contain the MySQL DB, using a region of your choice:
 
-    ```bash
-        az group create --name OsTicketPaaSRG --location "East US"
+    ```
+    az group create --name OsTicketPaaSRG --location "East US"
     ```
 
 3.  Execute the following command to create a MySQL Database:
   
-    > **Note**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name.
+    > **Note**: You must choose a unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name.
 
-    ```bash
-        az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
+    ```
+    az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
     ```
 
 4.  Add an open firewall rule to the database by executing the following command. Ensure you replace the server name with the unique value from the previous step.
@@ -657,7 +657,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![Under Management, Data Import/Restore is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image55.png "Management section")
 
-10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** datafile.
+10. On the **Data Import** screen, click the **Import from Self-Contained File**, and select the **c:\\HOL\\mysqlcluster.sql** data file.
 
     ![On the Data Import page, on the Import from Disk tab, under Import options, Import from Self-Contained File is selected, and the location is C:\\HOL\\mysqlcluster.sql.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image89.png "Data Import page")
 
@@ -709,14 +709,14 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 2.  Execute the following command to create a Linux-based **App Service Plan** for the new web app, using the **SAME** region where you created your **Azure Database for MySQL server** instance in the previous task.
 
-    ```bash
-        az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
+    ```
+    az appservice plan create -n OsTicket -g OsTicketPaaSRG --is-linux -l "East US" --sku S1 --number-of-workers 1
     ```
 
 3.  Execute the following command to create a new web app configured for PHP 7.0 inside of the new App Service Plan. The name of the web app (the value after **-n**) must be unique, so specify some numbers at the end to make it a more unique value. Example osticketsystem999 or osticketsystem87876.
 
     ```
-        az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
+    az webapp create -n osticketsystem -g OsTicketPaaSRG -p OsTicket -r "php|7.0"
     ```
 
 4.  Once the deployment has completed, open the **OsTicketPaaSRG** resource group. Notice there are now three objects: **MySQL database, Linux App Service Plan** and the **Web App**.
@@ -735,11 +735,11 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![Under Settings, Application settings is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image98.png "Settings section")
 
-4.  Locate the **Connection Strings** section. Enter the name **osticket**, and copy the string into the **value** area from notepad. Select **MySQL** in the dropdown list next to the string. Click **Save**.
+4.  Locate the **Connection Strings** section. Click the **+Add new connection string** then enter a new connection string name of **osticket**, copy the data source string from your connection sting into the **value** area from notepad. Select **MySQL** in the dropdown list next to the string. Click **Save**.
 
     ![Under Connection strings, the osticket connection string displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image99.png "Connection strings section")
 
-5.  Open a new browser tab and connect to <https://github.com/opsgility/osTicket>. This is a public repo for the OsTicket software. Sign in to your personal GitHub account or create a new one.
+5.  Open a new browser tab and connect to <https://github.com/opsgility/osTicket>. This is a public repository for the OsTicket software. Sign in to your personal GitHub account or create a new one.
 
     ![On the GitHub webpage, a code tab displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image100.png "GitHub webpage")
 
@@ -777,69 +777,62 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
     ![The text field under Commit changes reads, \"Updated MySQL Server Settings.\" The option to Commit directly to the master branch is selected, as is the Commit Changes button at the bottom. ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image108.png "Commit changes section")
 
-13. Move back to the Azure portal and, in the Web App blade, click **Deployment options** in the **Deployment** menu area.
+13. Move back to the Azure portal and, in the Web App blade, click **Deployment center** in the **Deployment** menu area.
 
-    ![Under Deployment, Deployment options is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image109.png "Deployment section")
+    ![Under Deployment, Deployment center is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-21-20-37-01.png "Deployment section")
 
-14. Click **Choose Source**, *Configure required settings*.
+14. Select **GitHub**, and then click the **Authorize** button and follow the prompts to connect your Github account with your Azure subscription.
 
-    ![Screenshot of the Choose Source, Configure required settings option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image110.png "Choose Source option")
+    ![Screenshot of the deployment center with the GitHub deployment option selected and authorization button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-21-20-40-23.png "Deployment center - Source control authorization")
 
-15. Click GitHub.
+15. Once authorized, select **Github** and choose **Continue**.
 
-    ![Under Choose source, GitHub is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image111.png "Choose source section")
+    ![Screenshot of the deployment center source control step with the GitHub deployment option selected and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-08-57-46.png "Deployment center - Source control")
 
-16. Click **Authorization**. If you have not connected your GitHub account to the Azure portal, follow the prompts.
+16. On the build provider step, choose **App Service Kudu build server** and select **Continue**.
 
-17. Click **Choose your organization** if your GitHub personal account is not shown.
+    ![Screenshot of the deployment center build provider step with the App Service Kudu build server option selected and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-01-49.png "Deployment center - Build provider")
 
-18. After your authorization settings are configured, click **Choose project**.
+17. On the configure step, choose your organization or Github account, then select the **osticket** repository and the **master** branch.
 
-    ![Screenshot of the Choose Project, Configure required settings option.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image112.png "Choose project option")
+    ![Screenshot of the deployment center configure step with the organization option configured, the repository set to osticket, the branch set to master and continue button selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-07-09.png "Deployment center - configure")
 
-19. Select the **osticket** repo.
+18. The OsTicket application will be downloaded from the GitHub account. First, it will show as Pending and then Active. You may need to refresh the view to see it.
 
-    ![On the Choose project blade, osticket is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image113.png "Choose project blade")
+    ![Screenshot of the deployment status showing pending.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-21-48.png "Deployment status pending")
 
-20. Review your selections in the **Deployment Option** blade and then click **OK**.
+    ![Screenshot of the deployment status showing success.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/2018-12-22-09-23-24.png "Deployment status success")
 
-    ![The Deployment option blade displays, ](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image114.png "Deployment option blade")
 
-21. The OsTicket application will be downloaded from the GitHub account. First, it will show as Pending and then Active. It may take a minute for it to appear in Deployment Options.
-
-    ![In the App Service blade, the Fetch status is downloading.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image115.png "App Service blade")
-
-    ![In the App Service blade, a message displays saying that the MySQL Server Settings are now updated.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image116.png "App Service blade")
-
-22. Click back to the **Overview** page, and then click the **URL** for the Web App.
+19. Navigate back to the **Overview** page of your Web App, and then select the **URL** for the Web App.
 
     ![The Web App URL http://osticketsystem.azurewebsites.net displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image117.png "Web App URL")
 
-23. Immediately, the Web App will load. You should see the Support Center website again.
+24. Immediately, the Web App will load. You should see the Support Center website again.
 
     ![The Support Center website displays with two button options: Open a New Ticket, or Check Ticket Status.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image22.png "Support Center webpage")
 
-24. Click the **Sign in** link.
+25. Click the **Sign in** link.
 
     ![Screenshot of the Sign in link.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image23.png "Sign in link")
 
-25. Locate **I'm an agent** and click the **sign in here** link.
+26. Locate **I'm an agent** and click the **sign in here** link.
 
     ![On the Sign in to Microsoft Cloud Workshop page, next to I\'m an agent, the link to sign in here is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image24.png "Sign in page")
 
-26. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
+27. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
 
-    a.  Username: ***demouser***
+    a.  Username: **demouser**
 
-    b.  Password: ***demo@pass123***
+    b.  Password: **demo@pass123**
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
-27. Once logged into the OsTicket system, click **My Tickets**.
+28. Once logged into the OsTicket system, click **My Tickets**.
 
     ![On the osTicket page, tickets tab, My Tickets (4) is selected.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image26.png "osTicket page, tickets tab")
 
-28. On the **My Tickets** screen, click through to one of the tickets. Once again, you see that the data from the IaaS installation of the OsTicket system is preserved which means that you have successfully lifted and shifted the application to Azure PaaS!
+29. On the **My Tickets** screen, click through to one of the tickets. Once again, you see that the data from the IaaS installation of the OsTicket system is preserved which means that you have successfully lifted and shifted the application to Azure PaaS!
 
 ## After the hands-on lab
 
