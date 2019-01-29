@@ -503,9 +503,9 @@ The MySQL Cluster and the Scale Set are running in isolated VNets. To bring the 
 
 12. At the OsTicket screen enter the **username** and **password**, and click **Log In**.
 
-    a.  Username: ***demouser***
+    a.  Username: **demouser**
 
-    b.  Password: ***demo@pass123***
+    b.  Password: **demo@pass123**
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
@@ -565,7 +565,7 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 3.  Execute the following command to create a MySQL Database:
   
-    > **Note**: You must choose an unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name.
+    > **Note**: You must choose a unique name for the MySQL server. Replace **osticketsrv01** with a more unique value / name.
 
     ```
     az mysql server create --resource-group OsTicketPaaSRG --name osticketsrv01 --location "East US" --admin-user demouser --admin-password demo@pass123 --sku-name GP_Gen5_8 --storage-size 51200 --ssl-enforcement Disabled
@@ -822,9 +822,9 @@ In this exercise, you will implement Phase II of the migration to Azure. Here yo
 
 27. At the OsTicket screen, enter the **username** and **password** and click **Log In**.
 
-    a.  Username: ***demouser***
+    a.  Username: **demouser**
 
-    b.  Password: ***demo@pass123***
+    b.  Password: **demo@pass123**
 
     ![The osTicket log in webpage displays.](images/Hands-onlabstep-by-step-Linuxliftandshiftimages/media/image25.png "osTicket log in webpage")
 
