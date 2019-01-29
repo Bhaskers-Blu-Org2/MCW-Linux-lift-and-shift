@@ -7,5 +7,4 @@
 
 [HOL step-by-step - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab/HOL%20step-by-step%20-%20Linux%20lift%20and%20shift.html)
 
-[HOL unguided - Linux lift and shift.html](https://cloudworkshop.blob.core.windows.net/linux-lift-shift/Hands-on%20lab/HOL%20unguided%20-%20Linux%20lift%20and%20shift.html)
 
