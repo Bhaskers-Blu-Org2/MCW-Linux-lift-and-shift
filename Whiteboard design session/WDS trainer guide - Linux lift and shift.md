@@ -445,15 +445,17 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         -   The application will be deployed to the VM Scale Set using the Linux Custom Script extension via download zip file of the application. Any upgrades will need to be built and staged in updated zip file for new VMs to capture. This is compatible with Scale Sets and will be self-configuring for new VMs as it scales up and down.
 
+
     -   How will the database be migrated to Azure?
 
         -   The MySQL Database will be manually backed up and restored using MySQL workbench. This is a onetime process and there will be downtime associated with this procedure. There will be zero data loss.
+
 
     -   How will the App and Data tiers be split and secured?
 
         -   The database cluster and the VM Scale Set will be deployed into two separate virtual networks and connected via a peering. Network security groups will be used to ensure connectivity for only the specific ports and protocols that we be used.
 
-        -   The KeyVault will be used to create and house the keys, certificates and secrets for the application. This will be used to encrypt the VMs for the database ensuring that the clients data cannot be stolen.
+        -   The KeyVault will be used to create and house the keys, certificates and secrets for the application. This will be used to encrypt the VMs for the database ensuring that the client's data cannot be stolen.
 
     -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
 
@@ -472,22 +474,27 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
         -   Once the application has been moved to Azure Web Apps it will be configured for continuous delivery using GitHub. This means that once code has been committed to the master branch of the repository in GitHub it will immediately deploy to the site.
 
     -   How will the database be migrated to Azure?
+    
 
         -   The MySQL Database will again be manually backed up and restored using MySQL workbench. This is a onetime process and there will be downtime associated with this procedure. There will be zero data loss.
 
     -   How will the App and Data tiers be split and secured?
+    
 
         -   The App and Data tiers of the application are not running in Azure PaaS. As a result, they no longer rely upon the use of a Virtual Network. Each is secured by the Azure platform. The database will be configured to use SSL encryption between the two, but there is no longer a tiering configure that must be secured.
 
     -   Insure that the designs are built for high availability, cost optimization, performance and using best practices.
+    
 
         -   Given that the application is now fully deployed into Azure PaaS, high-availability is built into each tier with zero configuration on the part of the DevOps team. The Web App system will scale up and down base down based on the load. If for some reason the MySQL Database becomes a bottle neck it can be easily resized using the Azure portal. There will be a period of downtime for this scaling, so it will be important to do performance testing prior to periods of load on the system.
 
     -   Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure.
+    
 
         -   The Active Directory that is running on-premises today will be synchronized with Azure AD using AD Connect. This will allow for the use of RBAC on the various resource groups that will be deployed into Azure.
 
     -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
+    
 
         -   The Azure Monitor service will be leveraged for monitoring and supporting the application. All diagnostic data will be sent to the Azure Log Analytics platform. Azure App Service will be configured to send logs to Log Analytics. Just as in Phase I, an alert for the known error message on the web servers will be configured. When triggered this will fire a Web hook to Azure Automation which will be used to play a run book to restart the Web App.
 
