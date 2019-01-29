@@ -169,7 +169,7 @@ Directions: With all participants at your table, respond to the following questi
 
     -   Describe how you will leverage Azure access control methods to ensure that only administrators of the support application will have access to the new infrastructure.
 
-    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues
+    -   Detail how monitoring for the support application will be configured as well as how automation could enable the availability to mitigate known issues.
 
 *Network Design*:
 
@@ -179,7 +179,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Customer Objections*:
 
-1.  Provide details on how your will address each of the objections that were put forward by the client
+1.  Provide details on how your will address each of the objections that were put forward by the client.
 
 **Prepare**
 
