@@ -1,5 +1,7 @@
 # Linux lift and shift
 
+## This workshop is no longer being maintained and will be archived on June 28, 2019.
+
 Fabrikam Global Manufacturing & Operations Corporation, based in Japan, provides product design, manufacturing, and repair services of domestic individual or industrial electronics, as well as global support for their customers. 
 
 To avoid any impact from restructured support operations, executives decided to migrate on-premises customer support systems into Microsoft Azure. The hope is that running Linux VMs on Azure should enable Fabrikam to lower costs while sustaining or even increasing availability of the application.
