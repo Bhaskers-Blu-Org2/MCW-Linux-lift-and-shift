@@ -1,6 +1,6 @@
 # Linux lift and shift
 
-## This workshop is no longer being maintained and will be archived on June 28, 2019.
+## This workshop is archived and is no longer being maintained. Content is read-only.
 
 Fabrikam Global Manufacturing & Operations Corporation, based in Japan, provides product design, manufacturing, and repair services of domestic individual or industrial electronics, as well as global support for their customers. 
 
@@ -40,8 +40,5 @@ By the end of the hands-on lab you will be better able to configure Linux VMs an
 - Azure Resource Manager Templates
 - MySQL Workbench
 
-## Azure solutions
-Linux on Azure
-
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [Microsoft Cloud Workshop](https://microsoftcloudworkshop.com/index.html)
